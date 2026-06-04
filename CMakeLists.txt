@@ -18,6 +18,9 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+add_executable(motor_control_node src/main.cpp src/motor_cfg.cpp)
+ament_target_dependencies(motor_control_node rclcpp std_msgs)
+
 
 # Generate messages
 # rosidl_generate_interfaces(${PROJECT_NAME}
